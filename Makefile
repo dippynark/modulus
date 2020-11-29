@@ -11,3 +11,9 @@ test:
 	    -w /src/$(PROJECT) \
 	    $(SHELLCHECK_IMAGE) \
 	    $(TEST_FILES)
+
+build:
+	docker build -t dippynark/modulus:v1.0.0 .
+
+push: build
+	docker push dippynark/modulus:v1.0.0
